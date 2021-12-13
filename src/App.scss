@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html, body {
@@ -77,6 +78,9 @@ iframe{
 }
 
 .section__header{
-    @include flex(center, space-between);
-    
+    @include flex(center, space-between);    
+}
+
+.btns > * ~ * {
+    margin-left: 1rem;
 }

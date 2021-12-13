@@ -17,7 +17,7 @@ export const tvType = {
     on_the_air: 'on_the_air',
 }
 
-export const tmbApi = {
+const tmbApi = {
     getMovieList: (type, params) => {
         const url = 'movie/' + movieType[type]
         return axiosClient.get(url, params)
