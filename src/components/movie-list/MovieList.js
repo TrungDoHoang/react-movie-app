@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import { Swiper, SwiperSlide} from 'swiper/react'
+import React, { useEffect, useState } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import tmbApi, { category } from '../../api/tmbAPI'
-import apiConfig from '../../api/apiConfig'
+import MovieCard from '../movie-card/MovieCard'
 import './movie-list.scss'
 
 function MovieList(props) {
@@ -26,7 +26,6 @@ function MovieList(props) {
             setItems(response.results)
         })()
     }, [])
-    console.log(items)
     return (
         <div className="movie-list">
             <Swiper
@@ -37,7 +36,7 @@ function MovieList(props) {
                 {
                     items.map((item, index) => (
                         <SwiperSlide key={index}>
-                            <img src={apiConfig.w400Image(item.poster_path)} alt="" />
+                            <MovieCard item={item} category={props.category} />
                         </SwiperSlide>
                     ))
                 }
