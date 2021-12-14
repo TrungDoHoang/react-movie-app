@@ -1,23 +1,23 @@
-@use '../../scss/' as *;
+@use "../../scss/" as *;
 
-.logo{
+.logo {
     font-size: 2.5rem;
     font-weight: 600;
 
     @include flex(center, unset);
 
-    img{
+    img {
         margin-right: 10px;
         width: 50px;
 
-        @include mobile{
+        @include mobile {
             margin-right: 0;
             width: 30px;
         }
     }
 }
 
-.header{
+.header {
     height: $header-height;
     position: fixed;
     top: 0;
@@ -26,51 +26,55 @@
     z-index: 99;
     transition: height 0.3s ease, background-color 0.3s ease;
 
-    &.shrink{
+    &.shrink {
         height: $header-shrink-height;
         background-color: $body-bg;
     }
 
-    &__wrap{
+    &__wrap {
         @include flex(center, space-between);
 
         height: 100%;
         padding: 0 2rem;
 
-        @include mobile{
+        @include mobile {
             justify-content: center;
         }
     }
 
-    &__nav{
+    &__nav {
         @include flex(center, unset);
 
         & > * ~ * {
             margin-left: 2rem;
         }
 
-        li{
+        li {
             padding: 5px 0;
             font-weight: 700;
             position: relative;
             font-size: 1.5rem;
 
-            &::before{
-                content: '';
+            &::before {
+                content: "";
                 position: absolute;
                 bottom: 0;
                 left: 50%;
                 transform: translateX(-50%);
                 width: 0;
-                transition: width .5s ease;
+                transition: width 0.5s ease;
                 height: 2px;
                 background-color: $main-color;
-    
             }
-    
-            &.active::before,
-            &:hover::before{
+            &.active::before {
                 width: 100%;
+            }
+
+            // Sử dụng thuộc tính hover chỉ trên các thiết bị có thể hover
+            @media (hover: hover) {
+                &:hover::before {
+                    width: 100%;
+                }
             }
         }
 
