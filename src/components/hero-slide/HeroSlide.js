@@ -15,7 +15,6 @@ function HeroSlide() {
             try {
                 const response = await tmbApi.getMovieList(movieType.popular, { params })
                 setMovieItems(response.results.slice(0, 4))
-                console.log(response)
             } catch {
                 console.log('error loading data hero-slide')
             }
@@ -30,7 +29,7 @@ function HeroSlide() {
                 spaceBetween={0}
                 slidesPerView={1}
                 grabCursor={true}
-                autoplay={{delay: 4000}}
+                // autoplay={{delay: 4000}}
             >
                 {
                     movieItems.map((item, index) => (

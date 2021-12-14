@@ -10,7 +10,7 @@
     right: 0;
     bottom: 0;
     overflow: auto;
-    background-color: rgba($color: $black, $alpha: .4);
+    background-color: rgba($color: $black, $alpha: .7);
     visibility: hidden;
     opacity: 0;
 
@@ -39,7 +39,7 @@
             font-size: 1.5rem;
             cursor: pointer;
 
-            &:hover{
+            &:hover i{
                 background-color: $main-color;
             }
         }

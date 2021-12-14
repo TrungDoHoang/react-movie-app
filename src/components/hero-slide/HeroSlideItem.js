@@ -5,7 +5,7 @@ import apiConfig from '../../api/apiConfig'
 import tmbApi, { category } from '../../api/tmbAPI'
 
 function HeroSlideItem(props) {
-    let history = useNavigate()
+    let navigate = useNavigate()
     const item = props.item
     const background = apiConfig.originalImage(item.backdrop_path ? item.backdrop_path : item.poster_path)
     const setModalActive = async() => {
@@ -13,7 +13,7 @@ function HeroSlideItem(props) {
         const videos = await tmbApi.getVideos(category.movie, item.id)
     
         if(videos.results.length > 0) {
-            const videoSrc = 'https://www.youtube.com/embed' + videos.results[0].key
+            const videoSrc = 'https://www.youtube.com/embed/' + videos.results[0].key
             modal.querySelector('.modal__content > iframe').setAttribute('src', videoSrc)
         } else {
             modal.querySelector('.modal__content').innerHTML = 'No trailer'
@@ -32,7 +32,7 @@ function HeroSlideItem(props) {
                     <h2 className="title">{item.title}</h2>
                     <div className="overview">{item.overview}</div>
                     <div className="btns">
-                        <Button onClick={()=>{history.push('/movie/' + item.id)}}>
+                        <Button onClick={()=>{navigate('/movie/' + item.id)}}>
                             Watch Now
                         </Button>
                         <OutlineButton onClick={setModalActive}>

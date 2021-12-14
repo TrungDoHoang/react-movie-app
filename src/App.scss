@@ -1,18 +1,19 @@
-@use './scss/' as *;
+@use "./scss/" as *;
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
 }
 
-html, body {
+html,
+body {
     font-size: 100%;
 
-    @include tablet{
+    @include tablet {
         font-size: 80%;
     }
 
@@ -33,52 +34,53 @@ body {
     }
 }
 
-a{
+a {
     text-decoration: none;
     color: unset;
 }
 
-ul{
+ul {
     list-style: none;
 }
 
-@media (hover: hover){
-    a:hover{
+@media (hover: hover) {
+    a:hover {
         color: $main-color;
     }
 }
 
-button, input{
+button,
+input {
     outline: none;
 }
 
-img{
+img {
     max-width: 100%;
 }
 
-iframe{
+iframe {
     border: 0;
 }
 
-.container{
+.container {
     max-width: 1240px;
     margin: auto;
 }
 
-.mb-3{
+.mb-3 {
     margin-bottom: 3rem;
 }
 
-.mb-2{
+.mb-2 {
     margin-bottom: 2rem;
 }
 
-.section{
+.section {
     padding: 0 2rem;
 }
 
-.section__header{
-    @include flex(center, space-between);    
+.section__header {
+    @include flex(center, space-between);
 }
 
 .btns > * ~ * {

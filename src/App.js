@@ -8,6 +8,7 @@ import Routers from './config/Routers';
 
 
 function App() {
+  document.title = 'tMovie';
   return (
     <BrowserRouter>
       <Header />
