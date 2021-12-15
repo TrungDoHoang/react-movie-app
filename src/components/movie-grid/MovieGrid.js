@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import tmbApi, { category, movieType, tvType } from '../../api/tmbAPI'
 import { OutlineButton } from '../button/Button'
 import MovieCard from '../movie-card/MovieCard'
+import MovieSearch from '../movie-search/MovieSearch'
 import './movie-grid.scss'
 
 const MovieGrid = (props) => {
@@ -30,6 +31,7 @@ const MovieGrid = (props) => {
                 }
                 response = await tmbApi.search(props.category, { params })
             }
+            console.log(response)
             setItems(response.results)
             setTotalPage(response.total_pages)
         })()
@@ -61,6 +63,9 @@ const MovieGrid = (props) => {
 
     return (
         <>
+            <div className="section mb-3">
+                <MovieSearch category={props.category} keyword={keyword} />
+            </div>
             <div className="movie-grid">
                 {
                     items.map((item, index) => <MovieCard item={item} category={props.category} key={index} />)
