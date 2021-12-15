@@ -34,7 +34,7 @@ const tmbApi = {
         const url = 'search/' + category[cate]
         return axiosClient.get(url, params)
     },
-    detail: (cate, params, id) => {
+    detail: (cate, id, params) => {
         const url = category[cate] + '/' + id
         return axiosClient.get(url, params)
     },
