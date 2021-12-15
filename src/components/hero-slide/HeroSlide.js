@@ -29,7 +29,7 @@ function HeroSlide() {
                 spaceBetween={0}
                 slidesPerView={1}
                 grabCursor={true}
-                // autoplay={{delay: 4000}}
+                autoplay={{delay: 4000}}
             >
                 {
                     movieItems.map((item, index) => (
