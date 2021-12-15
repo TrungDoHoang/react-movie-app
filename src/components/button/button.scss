@@ -11,6 +11,8 @@ button{
     color: $txt-color;
     border-radius: $border-radius;
     padding: 0.5rem 1.8rem;
+    @include flex(center, center);
+    display: inline-flex;
 
     font-size: 1.4rem;
     font-weight: 600;
