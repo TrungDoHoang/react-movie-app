@@ -14,14 +14,17 @@ const MovieSearch = (props) => {
             navigate(`/${category[props.category]}/search/${keyword}`)
         } else {
             searchBoxRef.current.classList.toggle('open')
-            searchBoxRef.current.firstElementChild.focus()
+            if(searchBoxRef.current.classList.contains('open')){
+                searchBoxRef.current.firstElementChild.focus()
+            } else {
+                searchBoxRef.current.firstElementChild.blur()
+            }
         }
     },[keyword, props.category, navigate])
 
     useEffect(() => {
         if(keyword.trim().length > 0){
             searchBoxRef.current.classList.add('open')
-            searchBoxRef.current.firstElementChild.focus()
         }
         const enterEvent = e => {
             e.preventDefault()
