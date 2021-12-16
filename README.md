@@ -15,7 +15,7 @@ Link: [https://trungdohoang.github.io/react-movie-app/](https://trungdohoang.git
 
 Link: [https://tmovie-app.herokuapp.com/](https://tmovie-app.herokuapp.com).
 
-## `Resource`
+## Resource
 
 Google font: [https://fonts.google.com/](https://fonts.google.com/).
 
