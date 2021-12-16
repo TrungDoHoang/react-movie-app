@@ -27,7 +27,7 @@ function MovieList(props) {
         })()
     }, [])
     return (
-        <div className="movie-list">
+        <div className="movie-list mb-2">
             <Swiper
                 grabCursor={true}
                 spaceBetween={10}

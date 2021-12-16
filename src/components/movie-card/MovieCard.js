@@ -10,7 +10,7 @@ const MovieCard = props => {
     const link = '/' + category[props.category] + '/' + item.id;
     const bg = apiConfig.w500Image(item.poster_path || item.backdrop_path)
     return (
-        <Link to={link}>
+        <Link to={link} title={item.title || item.name}>
             <div
                 className="movie-card"
                 style={{ backgroundImage: `url(${bg})` }}
@@ -19,7 +19,7 @@ const MovieCard = props => {
                     <i className="bx bx-play"></i>
                 </Button>
             </div>
-            <h3>{item.title || item.name}</h3>
+            <h3 >{item.title || item.name}</h3>
         </Link>
     )
 }

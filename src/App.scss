@@ -86,3 +86,33 @@ iframe {
 .btns > * ~ * {
     margin-left: 1rem;
 }
+
+.text-typing {
+	white-space: nowrap;
+	overflow: hidden;
+	animation: typing 10s steps(30) infinite, blink 1s infinite;
+	text-shadow: 0 0 100px $logo-color;
+
+    @keyframes typing {
+        0%,
+        100% {
+            width: 0%;
+        }
+        70%,
+        90% {
+            width: 100%;
+        }
+    }
+    
+    @keyframes blink {
+        0%,
+        100% {
+            border-right: 10px solid transparent;
+        }
+        50% {
+            border-right: 10px solid $main-color;
+        }
+    }
+}
+
+

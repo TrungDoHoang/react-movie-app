@@ -66,6 +66,11 @@ const MovieGrid = (props) => {
             <div className="section mb-3">
                 <MovieSearch category={props.category} keyword={keyword} />
             </div>
+            {
+                items.length <= 0 && (
+                    <h3 style={{textAlign: "center"}}>Không tìm thấy phim theo yêu cầu</h3>
+                )
+            }
             <div className="movie-grid">
                 {
                     items.map((item, index) => <MovieCard item={item} category={props.category} key={index} />)

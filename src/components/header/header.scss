@@ -1,8 +1,9 @@
 @use "../../scss/" as *;
 
 .logo {
+    color: $logo-color;
     font-size: 2.5rem;
-    font-weight: 600;
+    font-weight: 900;
 
     @include flex(center, unset);
 

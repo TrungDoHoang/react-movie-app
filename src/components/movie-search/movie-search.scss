@@ -2,12 +2,20 @@
 
 .movie-search{
     position: relative;
-    width: 100%;
+    width: 50px;
     max-width: 500px;
+    transition: all .7s ease;
+
+    &.open{
+        width: 100%;
+
+        & input{
+            padding-right: 8rem;
+        }
+    }
 
     input{
         width: 100%;
-        padding-right: 8rem;
     }
 
     button{
@@ -19,6 +27,15 @@
             right: 1px;
             top: 1px;
 
+        }
+    }
+
+    @include mobile{
+        input{
+            font-size: $font-size-mobile;
+        }
+        .small{
+            font-size: $font-size-mobile;
         }
     }
 }

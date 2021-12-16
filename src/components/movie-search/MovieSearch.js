@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { category } from '../../api/tmbAPI'
 import Button from '../button/Button'
@@ -7,14 +7,22 @@ import './movie-search.scss'
 
 const MovieSearch = (props) => {
     const navigate = useNavigate()
+    const searchBoxRef = useRef()
     const [keyword, setKeyword] = useState(props.keyword ? props.keyword : '')
-    const goToSearch = useCallback(()=>{
+    const goToSearch = useCallback(() => {
         if (keyword.trim().length > 0) {
             navigate(`/${category[props.category]}/search/${keyword}`)
+        } else {
+            searchBoxRef.current.classList.toggle('open')
+            searchBoxRef.current.firstElementChild.focus()
         }
     },[keyword, props.category, navigate])
 
     useEffect(() => {
+        if(keyword.trim().length > 0){
+            searchBoxRef.current.classList.add('open')
+            searchBoxRef.current.firstElementChild.focus()
+        }
         const enterEvent = e => {
             e.preventDefault()
             if(e.keyCode === 13){
@@ -27,7 +35,7 @@ const MovieSearch = (props) => {
         }
     },[keyword, goToSearch])
     return (
-        <div className="movie-search">
+        <div className="movie-search" ref={searchBoxRef}>
             <Input 
                 type="text"
                 placeholder="Enter key word"

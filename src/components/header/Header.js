@@ -21,14 +21,17 @@ function Header() {
 
     const { pathname } = useLocation()
     const headerRef = useRef()
+    const logoRef = useRef()
     const active = navRef.findIndex(e => e.path === pathname)
 
     useEffect(() => {
         const shrinkHeader = () => {
             if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100){
                 headerRef.current.classList.add('shrink')
+                logoRef.current.classList.remove('text-typing')
             } else {
                 headerRef.current.classList.remove('shrink')
+                logoRef.current.classList.add('text-typing')
             }
         }
         window.addEventListener('scroll', shrinkHeader)
@@ -42,7 +45,7 @@ function Header() {
             <div className="header__wrap container">
                 <div className="logo">
                     <img src={logo} alt="Logo" />
-                    <Link to="/" >tMovie</Link>
+                    <Link ref={logoRef} to="/" className='text-typing'>tMovie</Link>
                 </div>
                 <ul className="header__nav">
                     {
