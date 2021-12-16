@@ -90,7 +90,7 @@ iframe {
 .text-typing {
 	white-space: nowrap;
 	overflow: hidden;
-	animation: typing 10s steps(30) infinite, blink 1s infinite;
+	animation: typing 10s steps(10) infinite, blink 1s infinite;
 	text-shadow: 0 0 100px $logo-color;
 
     @keyframes typing {
@@ -98,7 +98,8 @@ iframe {
         100% {
             width: 0%;
         }
-        70%,
+
+        20%, 50%, 70%,
         90% {
             width: 100%;
         }
